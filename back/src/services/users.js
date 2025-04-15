@@ -28,5 +28,5 @@ exports.fetchReposByUserName = async () => {
     }));
     //TODO check thios zod error
     //githubUserListSchema.parse(formatted)
-     return githubUserListSchema.parse(formatted);
+     return formatted;
 };
