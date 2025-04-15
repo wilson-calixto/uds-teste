@@ -22,9 +22,11 @@ exports.fetchReposByUserName = async () => {
     const formatted = response.data.map(repo => ({
       id: repo.id,
       name: repo.name,
-      height: repo.id,
-      mass: repo.id,
+      height: repo.height,
+      mass: repo.mass,
       gender: repo.gender
     }));
+    //TODO check thios zod error
+    //githubUserListSchema.parse(formatted)
      return githubUserListSchema.parse(formatted);
 };
