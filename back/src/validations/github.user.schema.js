@@ -1,12 +1,16 @@
 const { z } = require("zod");
 
+
+
+
+ 
+
 const githubUserSchema = z.object({
-  name: z.string(),
-  url: z.string().url(),
-  description: z.string().nullable(),
-  stars: z.number().int().nonnegative(),
-  language: z.string().nullable(),
-});
+      id: z.number().int().nonnegative(),
+      name: z.string(),
+ 
+      gender: z.string().nullable(),  
+   });
 
 const githubUserListSchema = z.array(githubUserSchema);
 

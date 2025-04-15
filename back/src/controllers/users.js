@@ -14,8 +14,7 @@ exports.getUser = async (req, res) => {
 
 exports.getGithubUserRepos = async (req, res, next) => {
     try {
-      const username = req.params.name;
-      const parsedRepos = await UserService.fetchReposByUserName(username);
+      const parsedRepos = await UserService.fetchReposByUserName();
       res.json(parsedRepos);
     } catch (error) {
       //add midleware to deal with it 

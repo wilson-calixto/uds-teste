@@ -2,7 +2,8 @@ require("dotenv").config();
 const axios = require("axios");
 const { githubUserListSchema } = require("../validations/github.user.schema");
 
-const URL = process.env.API_GITHUB + `/users`
+const URL =  `https://akabab.github.io/starwars-api/api/all.json`
+//process.env.API_GITHUB + `/starwars-api/api/all.json`
 
 exports.createUser = async (data) => {
     return { id: Date.now(), ...data };
@@ -13,14 +14,16 @@ exports.getUserById = async (id) => {
 };
 
   
-exports.fetchReposByUserName = async (username) => {
-    const response = await axios.get(URL + `/${username}/repos`);
+exports.fetchReposByUserName = async () => {
+ 
+    const response = await axios.get(URL );
+ 
     const formatted = response.data.map(repo => ({
+      id: repo.id,
       name: repo.name,
-      url: repo.html_url,
-      description: repo.description,
-      stars: repo.stargazers_count,
-      language: repo.language
+      height: repo.height,
+      mass: repo.mass,
+      gender: repo.gender
     }));
-    return githubUserListSchema.parse(formatted);
+     return githubUserListSchema.parse(formatted);
 };
