@@ -2,6 +2,7 @@ import './App.css'
 import {  Table } from 'antd';
 import type { TableProps } from 'antd';
 import { UserData, useUser } from './hooks/useUser';
+import { CustomTypography } from './style';
 
  
 
@@ -36,7 +37,7 @@ function App() {
  
   return (
     <>
-       <h1>UDS TESTE + React + NODE JS</h1>
+       <CustomTypography>UDS TESTE + React + NODE JS</CustomTypography>
       <div className="card">
         {isError?(
            <p>Erro ao carregar dados.</p>
