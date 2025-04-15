@@ -5,6 +5,7 @@ const { githubUserListSchema } = require("../validations/github.user.schema");
 const URL =  `https://akabab.github.io/starwars-api/api/all.json`
 //process.env.API_GITHUB + `/starwars-api/api/all.json`
 
+//TODO addd .env
 exports.createUser = async (data) => {
     return { id: Date.now(), ...data };
 };

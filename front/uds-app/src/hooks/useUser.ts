@@ -15,8 +15,8 @@ export function useUser() {
     queryKey: ["getUser"],
     queryFn: async () => {
       const { data } = await axios.get<UserData[]>(
-        // "https://akabab.github.io/starwars-api/api/all.json"
-        "http://localhost:3000/api/users"
+        "https://akabab.github.io/starwars-api/api/all.json"
+        // "http://localhost:3000/api/users"
       );
       return data;
     },
