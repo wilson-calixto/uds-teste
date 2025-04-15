@@ -18,12 +18,12 @@ exports.getUserById = async (id) => {
 exports.fetchReposByUserName = async () => {
  
     const response = await axios.get(URL );
- 
+  
     const formatted = response.data.map(repo => ({
       id: repo.id,
       name: repo.name,
-      height: repo.height,
-      mass: repo.mass,
+      height: repo.id,
+      mass: repo.id,
       gender: repo.gender
     }));
      return githubUserListSchema.parse(formatted);
